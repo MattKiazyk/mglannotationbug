@@ -18,6 +18,7 @@
 		00667FD31E85693800665451 /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00667FD11E85693800665451 /* PopupViewController.xib */; };
 		00667FD51E85778200665451 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00667FD41E85778200665451 /* Mapbox.framework */; };
 		00667FD61E85778200665451 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00667FD41E85778200665451 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		00667FDA1E8579E800665451 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00667FD91E8579E800665451 /* CustomAnnotationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,8 @@
 		00667FD01E85693800665451 /* PopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
 		00667FD11E85693800665451 /* PopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
 		00667FD41E85778200665451 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		00667FD81E8579E800665451 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		00667FD91E8579E800665451 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				00667FCF1E85693800665451 /* PopupViewController.h */,
 				00667FD01E85693800665451 /* PopupViewController.m */,
 				00667FD11E85693800665451 /* PopupViewController.xib */,
+				00667FD81E8579E800665451 /* CustomAnnotationView.h */,
+				00667FD91E8579E800665451 /* CustomAnnotationView.m */,
 			);
 			path = AnnotationTintBug;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00667FDA1E8579E800665451 /* CustomAnnotationView.m in Sources */,
 				00667FB91E85630D00665451 /* ViewController.m in Sources */,
 				00667FCE1E85643700665451 /* BOAssetAnnotationView.m in Sources */,
 				00667FB61E85630D00665451 /* AppDelegate.m in Sources */,

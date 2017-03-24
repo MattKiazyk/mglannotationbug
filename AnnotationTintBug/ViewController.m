@@ -10,6 +10,7 @@
 #import <Mapbox/Mapbox.h>
 #import "BOAssetAnnotationView.h"
 #import "PopupViewController.h"
+#import "CustomAnnotationView.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet MGLMapView *mapView;
@@ -34,13 +35,20 @@
     MGLPointFeature *annotation = [[MGLPointFeature alloc] init];
     annotation.attributes = @{@"asset": @"my object"};
     annotation.coordinate = CLLocationCoordinate2DMake(40.262162, -79.420944);
-    annotation.title = @"Test annotation";
+    annotation.title = @"Custom annotation";
     return annotation;
 }
 
 - (void)reloadAnnotations {
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotation:[self defaultAnnotation]];
+
+    // Testing regular pointAnnotation instead of PointFeature
+    MGLPointAnnotation *regularAnnotation = [[MGLPointAnnotation alloc] init];
+    regularAnnotation.coordinate = CLLocationCoordinate2DMake(40.262163, -79.420844);
+    regularAnnotation.title = @"Regular annotation";
+
+    [self.mapView addAnnotation:regularAnnotation];
 }
 
 - (IBAction)reloadAnnotations:(id)sender {
@@ -54,15 +62,31 @@
     if ([annotation isKindOfClass:[MGLUserLocation class]]) {
         return nil;
     }
-    //MGLPointFeature *assetFeature = (MGLPointFeature *)annotation;
 
-    NSString *reuseIdentifier = [NSString stringWithFormat:@"%@", @"Test"];
-    BOAssetAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
-    if (!annotationView) {
-        annotationView = [[BOAssetAnnotationView alloc] initWithReuseIdentifier:reuseIdentifier];
+    NSString *reuseIdentifier = [NSString stringWithFormat:@"%@", @(annotation.coordinate.latitude)];
+    if ([annotation isKindOfClass:[MGLPointFeature class]]) {
+
+        BOAssetAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
+        if (!annotationView) {
+            annotationView = [[BOAssetAnnotationView alloc] initWithReuseIdentifier:reuseIdentifier];
+        }
+        
+        return annotationView;
     }
+    if ([annotation isKindOfClass:[MGLPointAnnotation class]]) {
 
-    return annotationView;
+        CustomAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
+        if (!annotationView) {
+            annotationView = [[CustomAnnotationView alloc] initWithReuseIdentifier:reuseIdentifier];
+            annotationView.frame = CGRectMake(0, 0, 40, 40);
+
+            // Set the annotation view’s background color to a value determined by its longitude.
+            CGFloat hue = (CGFloat)annotation.coordinate.longitude / 100;
+            annotationView.backgroundColor = [UIColor colorWithHue:hue saturation:0.5 brightness:1 alpha:1];
+        }
+        return annotationView;
+    }
+    return nil;
 }
 
 - (BOOL)mapView:(MGLMapView *)mapView annotationCanShowCallout:(id<MGLAnnotation>)annotation {
