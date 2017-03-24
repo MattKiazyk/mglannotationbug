@@ -13,21 +13,21 @@
 		00667FBC1E85630D00665451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00667FBA1E85630D00665451 /* Main.storyboard */; };
 		00667FBE1E85630D00665451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00667FBD1E85630D00665451 /* Assets.xcassets */; };
 		00667FC11E85630D00665451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00667FBF1E85630D00665451 /* LaunchScreen.storyboard */; };
-		00667FC91E85632B00665451 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00667FC81E85632B00665451 /* Mapbox.framework */; };
-		00667FCA1E85632B00665451 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00667FC81E85632B00665451 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		00667FCE1E85643700665451 /* BOAssetAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00667FCD1E85643700665451 /* BOAssetAnnotationView.m */; };
 		00667FD21E85693800665451 /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00667FD01E85693800665451 /* PopupViewController.m */; };
 		00667FD31E85693800665451 /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00667FD11E85693800665451 /* PopupViewController.xib */; };
+		00667FD51E85778200665451 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00667FD41E85778200665451 /* Mapbox.framework */; };
+		00667FD61E85778200665451 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00667FD41E85778200665451 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		00667FCB1E85632B00665451 /* Embed Frameworks */ = {
+		00667FD71E85778200665451 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				00667FCA1E85632B00665451 /* Mapbox.framework in Embed Frameworks */,
+				00667FD61E85778200665451 /* Mapbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,12 +45,12 @@
 		00667FBD1E85630D00665451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00667FC01E85630D00665451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00667FC21E85630D00665451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00667FC81E85632B00665451 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		00667FCC1E85643700665451 /* BOAssetAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOAssetAnnotationView.h; sourceTree = "<group>"; };
 		00667FCD1E85643700665451 /* BOAssetAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOAssetAnnotationView.m; sourceTree = "<group>"; };
 		00667FCF1E85693800665451 /* PopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
 		00667FD01E85693800665451 /* PopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
 		00667FD11E85693800665451 /* PopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
+		00667FD41E85778200665451 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00667FC91E85632B00665451 /* Mapbox.framework in Frameworks */,
+				00667FD51E85778200665451 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +68,7 @@
 		00667FA51E85630D00665451 = {
 			isa = PBXGroup;
 			children = (
-				00667FC81E85632B00665451 /* Mapbox.framework */,
+				00667FD41E85778200665451 /* Mapbox.framework */,
 				00667FB01E85630D00665451 /* AnnotationTintBug */,
 				00667FAF1E85630D00665451 /* Products */,
 			);
@@ -121,7 +121,7 @@
 				00667FAA1E85630D00665451 /* Sources */,
 				00667FAB1E85630D00665451 /* Frameworks */,
 				00667FAC1E85630D00665451 /* Resources */,
-				00667FCB1E85632B00665451 /* Embed Frameworks */,
+				00667FD71E85778200665451 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,6 +355,7 @@
 				00667FC71E85630D00665451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
